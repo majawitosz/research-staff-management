@@ -19,9 +19,10 @@ public:
     string name;
     string surname;
 public:
-    Researcher(string n, string s);
     vector<Researcher> researchers;
+    Researcher(string n, string s);
     void addResearcher(string n, string s);
+    vector<Researcher> retrieveResearchers();
     
 };
 
@@ -31,10 +32,10 @@ public:
 namespace Controller {
 
 class Logic {
-   
     View::ResearcherInput* ri;
     Model::Researcher* r;
 public:
+    
     Logic(View::ResearcherInput* _ri, Model::Researcher* _r);
     void doLogic();
 };
@@ -48,14 +49,7 @@ public:
 //    int retrieve();
 //};
 
-//class Logic {
-//    View::UserInput* ui;
-//    Model::Storage* s;
-//public:
-//    Logic(View::UserInput* _ui, Model::Storage* _s);
-//    void doLogic();
-//
-//};
+
 
 
 

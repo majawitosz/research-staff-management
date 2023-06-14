@@ -20,6 +20,9 @@ string View::ResearcherInput::getSurname(){
     cin>>s;
     return s;
 }
+void View::ResearcherInput::displayResearchers(){
+    
+}
 
 
 //void View::UserInput::prompt(string i){

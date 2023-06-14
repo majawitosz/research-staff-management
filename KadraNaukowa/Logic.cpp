@@ -14,6 +14,10 @@ void Model::Researcher::addResearcher(string n, string s){
     Researcher r1(n, s);
     researchers.push_back(r1);
 }
+vector<Model::Researcher> Model::Researcher::retrieveResearchers(){
+    return researchers;
+}
+
 
 Controller::Logic::Logic(View::ResearcherInput* _ri, Model::Researcher* _r): ri(_ri), r(_r) {
    doLogic();
@@ -25,6 +29,9 @@ void Controller::Logic::doLogic(){
     string s = ri->getSurname();
     //store the data
     r->addResearcher(n,s);
+    //retrive the data
+    vector<Model::Researcher> retrivedData = r->retrieveResearchers();
+    ri->displayResearchers();
     
     
 }

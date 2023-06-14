@@ -26,7 +26,7 @@ namespace View {
 class ResearcherInput {
   
 public:
-    //void prompt();
+    void displayResearchers();
     string getName();
     string getSurname();
     
