@@ -8,16 +8,31 @@
 #include "view.hpp"
 
 
-void View::UserInput::prompt(string i){
-    cout<<i<<endl;
+string View::ResearcherInput::getName(){
+    string n;
+    cout<<"Name: ";
+    cin>>n;
+    return n;
+}
+string View::ResearcherInput::getSurname(){
+    string s;
+    cout<<"Surname: ";
+    cin>>s;
+    return s;
 }
 
-void View::UserInput::prompt(int k){
-    cout<<k<<endl;
-}
 
-int View::UserInput::getInput(){
-    int x;
-    cin >>x;
-    return x;
-}
+//void View::UserInput::prompt(string i){
+//    cout<<i<<endl;
+//}
+//
+//void View::UserInput::prompt(int k){
+//    cout<<k<<endl;
+//}
+//
+//int View::UserInput::getInput(){
+//    int x;
+//    cin >>x;
+//    return x;
+//}
+

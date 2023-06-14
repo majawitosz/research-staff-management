@@ -9,21 +9,28 @@
 #define view_hpp
 #include <iostream>
 #include <stdio.h>
+#include <vector>
 using namespace std;
 
 
 
 namespace View {
 
-class UserInput {
+//class UserInput {
+//public:
+//    void prompt(string i);
+//    void prompt(int k);
+//    int getInput();
+//};
+
+class ResearcherInput {
+  
 public:
-    void prompt(string i);
-    void prompt(int k);
-    int getInput();
- 
+    //void prompt();
+    string getName();
+    string getSurname();
     
 };
-
 }
 
 #endif /* view_hpp */
