@@ -1,0 +1,56 @@
+{
+  "_buildCommand2" : {
+    "command" : "build",
+    "skipDependencies" : false,
+    "style" : "buildAndRun"
+  },
+  "buildCommand" : "build",
+  "configuredTargets" : [
+    {
+      "guid" : "21193815632ddf518003777eb6d6dffeb2282e9e585d758eb41bd9e636f821b5"
+    }
+  ],
+  "containerPath" : "/Users/majawitosz/Documents/Studia/wszystkoProjekt/research-staff-management/KadraNaukowa.xcodeproj",
+  "continueBuildingAfterErrors" : false,
+  "enableIndexBuildArena" : false,
+  "hideShellScriptEnvironment" : false,
+  "parameters" : {
+    "action" : "build",
+    "activeArchitecture" : "x86_64",
+    "activeRunDestination" : {
+      "disableOnlyActiveArch" : false,
+      "platform" : "macosx",
+      "sdk" : "macosx12.3",
+      "sdkVariant" : "macos",
+      "supportedArchitectures" : [
+        "x86_64h",
+        "x86_64"
+      ],
+      "targetArchitecture" : "x86_64"
+    },
+    "arenaInfo" : {
+      "buildIntermediatesPath" : "/Users/majawitosz/Documents/Studia/wszystkoProjekt/research-staff-management/Build/Intermediates.noindex",
+      "buildProductsPath" : "/Users/majawitosz/Documents/Studia/wszystkoProjekt/research-staff-management/Build/Products",
+      "derivedDataPath" : "/Users/majawitosz/Library/Developer/Xcode/DerivedData",
+      "indexDataStoreFolderPath" : "/Users/majawitosz/Library/Developer/Xcode/DerivedData/KadraNaukowa-bhsokelpipgaqnbjtvrlmnuwfezy/Index.noindex/DataStore",
+      "indexEnableDataStore" : true,
+      "indexPCHPath" : "/Users/majawitosz/Library/Developer/Xcode/DerivedData/KadraNaukowa-bhsokelpipgaqnbjtvrlmnuwfezy/Index.noindex/PrecompiledHeaders",
+      "pchPath" : "/Users/majawitosz/Documents/Studia/wszystkoProjekt/research-staff-management/Build/Intermediates.noindex/PrecompiledHeaders"
+    },
+    "configurationName" : "Debug",
+    "overrides" : {
+      "synthesized" : {
+        "table" : {
+          "ENABLE_PREVIEWS" : "NO"
+        }
+      }
+    }
+  },
+  "schemeCommand" : "launch",
+  "schemeCommand2" : "launch",
+  "showNonLoggedProgress" : true,
+  "useDryRun" : false,
+  "useImplicitDependencies" : true,
+  "useLegacyBuildLocations" : false,
+  "useParallelTargets" : true
+}

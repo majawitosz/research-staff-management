@@ -6,42 +6,51 @@
 //
 
 #include "View.hpp"
-#include "Model.hpp"
 
-
-string View::ResearcherInput::getName(){
-    string n;
+vector<string> UserInput::getFullName(){
+    string name;
+    string surname;
     cout<<"Name: ";
-    cin>>n;
-    return n;
-}
-string View::ResearcherInput::getSurname(){
-    string s;
+    cin>>name;
+    fullname.push_back(name);
     cout<<"Surname: ";
-    cin>>s;
-    return s;
+    cin>>surname;
+    fullname.push_back(surname);
+    return fullname;
 }
-void View::ResearcherInput::displayResearchers(vector<Model::Researcher>& researchers){
-    for(int i = 0; i<researchers.size(); i++) {
-        cout << "Name: " << researchers[i].name << endl;
-        cout << "Surname: "<<researchers[i].surname<<endl;
-        cout << endl;
-        
+
+void UserInput::displayScientists(vector<Scientist> scientistsI){
+    for(int i = 0; i<scientistsI.size(); i++){
+        cout<<"Name that you entered: "<<scientistsI[i].name<<endl;
+        cout<<"Surname that you entered: "<<scientistsI[i].surname<<endl;
     }
+    
 }
 
 
-//void View::UserInput::prompt(string i){
-//    cout<<i<<endl;
+
+
+
+//string View::ResearcherInput::getName(){
+//    string n;
+//    cout<<"Name: ";
+//    cin>>n;
+//    return n;
 //}
+//string View::ResearcherInput::getSurname(){
+//    string s;
+//    cout<<"Surname: ";
+//    cin>>s;
+//    return s;
+//}
+//void View::ResearcherInput::displayResearchers(vector<Model::Researcher>& researchers){
+//    for(int i = 0; i<researchers.size(); i++) {
+//        cout << "Name: " << researchers[i].name << endl;
+//        cout << "Surname: "<<researchers[i].surname<<endl;
+//        cout << endl;
 //
-//void View::UserInput::prompt(int k){
-//    cout<<k<<endl;
+//    }
 //}
-//
-//int View::UserInput::getInput(){
-//    int x;
-//    cin >>x;
-//    return x;
-//}
+
+
 

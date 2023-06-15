@@ -7,26 +7,37 @@
 
 #ifndef View_hpp
 #define View_hpp
+#include "Model.hpp"
 #include <iostream>
-#include <vector>
 #include <string>
+#include <vector>
 using namespace std;
 
-namespace Model {
-class Researcher;
-}
-
-
-namespace View {
-
-class ResearcherInput {
-  
+class UserInput {
+    vector<string> fullname;
 public:
-    string getName();
-    string getSurname();
-    void displayResearchers(vector<Model::Researcher>& researchers);
-    
+    vector<string> getFullName();
+    void displayScientists(vector<Scientist> scientistsI);
+   
 };
-}
+
+
+
+//namespace Model {
+//class Researcher;
+//}
+//
+//
+//namespace View {
+//
+//class ResearcherInput {
+//
+//public:
+//    string getName();
+//    string getSurname();
+//    void displayResearchers(vector<Model::Researcher>& researchers);
+//
+//};
+//}
 
 #endif /* view_hpp */

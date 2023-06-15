@@ -7,26 +7,34 @@
 
 #ifndef Model_hpp
 #define Model_hpp
-#include <iostream>
+#include "Scientist.hpp"
 #include <vector>
-#include <string>
 using namespace std;
 
-//Wszytsko powiązane z przechowywaniem danych
-namespace Model {
-
-class Researcher {
+class Data {
+    vector<Scientist> scientists;
 public:
-    string name;
-    string surname;
-    vector<Researcher> researchers;
-public:
-    Researcher(string n = "Jan", string s = "Kowalski");
-    void addResearcher(string n, string s);
-    vector<Researcher> retrieveResearchers();
-    
+    void addScientist(vector<string> fni);
+    vector<Scientist> retrieveScientists();
 };
 
-}
+
+
+//Wszytsko powiązane z przechowywaniem danych
+//namespace Model {
+//
+//class Researcher {
+//public:
+//    string name;
+//    string surname;
+//    vector<Researcher> researchers;
+//public:
+//    Researcher(string n = "Jan", string s = "Kowalski");
+//    void addResearcher(string n, string s);
+//    vector<Researcher> retrieveResearchers();
+//
+//};
+//
+//}
 
 #endif /* model_hpp */
