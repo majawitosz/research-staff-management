@@ -5,30 +5,26 @@
 //  Created by Maja Witosz on 14/06/2023.
 //
 
-#ifndef view_hpp
-#define view_hpp
+#ifndef View_hpp
+#define View_hpp
 #include <iostream>
-#include <stdio.h>
 #include <vector>
+#include <string>
 using namespace std;
 
+namespace Model {
+class Researcher;
+}
 
 
 namespace View {
 
-//class UserInput {
-//public:
-//    void prompt(string i);
-//    void prompt(int k);
-//    int getInput();
-//};
-
 class ResearcherInput {
   
 public:
-    void displayResearchers();
     string getName();
     string getSurname();
+    void displayResearchers(vector<Model::Researcher>& researchers);
     
 };
 }

@@ -5,19 +5,9 @@
 //  Created by Maja Witosz on 14/06/2023.
 //
 
-#include "logic.hpp"
-
-
-Model::Researcher::Researcher(string n, string s): name(n), surname(s){};
-
-void Model::Researcher::addResearcher(string n, string s){
-    Researcher r1(n, s);
-    researchers.push_back(r1);
-}
-vector<Model::Researcher> Model::Researcher::retrieveResearchers(){
-    return researchers;
-}
-
+#include "Logic.hpp"
+#include "View.hpp"
+#include "Model.hpp"
 
 Controller::Logic::Logic(View::ResearcherInput* _ri, Model::Researcher* _r): ri(_ri), r(_r) {
    doLogic();
@@ -31,8 +21,7 @@ void Controller::Logic::doLogic(){
     r->addResearcher(n,s);
     //retrive the data
     vector<Model::Researcher> retrivedData = r->retrieveResearchers();
-    ri->displayResearchers();
-    
+    ri->displayResearchers(retrivedData);
     
 }
     

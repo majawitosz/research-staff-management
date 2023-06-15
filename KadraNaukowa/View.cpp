@@ -5,7 +5,8 @@
 //  Created by Maja Witosz on 14/06/2023.
 //
 
-#include "view.hpp"
+#include "View.hpp"
+#include "Model.hpp"
 
 
 string View::ResearcherInput::getName(){
@@ -20,8 +21,13 @@ string View::ResearcherInput::getSurname(){
     cin>>s;
     return s;
 }
-void View::ResearcherInput::displayResearchers(){
-    
+void View::ResearcherInput::displayResearchers(vector<Model::Researcher>& researchers){
+    for(int i = 0; i<researchers.size(); i++) {
+        cout << "Name: " << researchers[i].name << endl;
+        cout << "Surname: "<<researchers[i].surname<<endl;
+        cout << endl;
+        
+    }
 }
 
 

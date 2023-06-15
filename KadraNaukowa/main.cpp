@@ -6,13 +6,17 @@
 //
 
 
-#include "view.hpp"
-#include "logic.hpp"
+#include "Logic.hpp"
+#include "View.hpp"
+#include "Model.hpp"
+
 
 int main(int argc, const char * argv[]) {
     
     View::ResearcherInput r1;
-    Model::Researcher m1("Maja", "Witosz");
+   
+    Model::Researcher m1;
+
     Controller::Logic l1(&r1, &m1);
     
     

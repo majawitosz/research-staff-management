@@ -5,27 +5,20 @@
 //  Created by Maja Witosz on 14/06/2023.
 //
 
-#ifndef logic_hpp
-#define logic_hpp
-#include "view.hpp"
+#ifndef Logic_hpp
+#define Logic_hpp
 #include <stdio.h>
+#include <iostream>
+#include <vector>
+using namespace std;
 
-//Wszytsko powiązane z przechowywaniem danych
+
+namespace View {
+class ResearcherInput;
+}
+
 namespace Model {
-
-
-class Researcher {
-public:
-    string name;
-    string surname;
-public:
-    vector<Researcher> researchers;
-    Researcher(string n, string s);
-    void addResearcher(string n, string s);
-    vector<Researcher> retrieveResearchers();
-    
-};
-
+class Researcher;
 }
 
 //Wszytsko powiązane z logiką
@@ -42,12 +35,6 @@ public:
 }
 
 
-//class Storage {
-//    int x;
-//public:
-//    void store(int n);
-//    int retrieve();
-//};
 
 
 
