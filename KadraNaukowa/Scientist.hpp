@@ -19,7 +19,8 @@ class Scientist {
 public:
     string name;
     string surname;
-    Scientist(string = "John", string ="Smith");
+    int id;
+    Scientist(string = "John", string ="Smith", int = 0);
     
 };
 

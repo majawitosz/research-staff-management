@@ -12,6 +12,9 @@
 #include <stdio.h>
 #include <vector>
 
+class Input {
+    void handleInput();
+};
 
 class Controller {
     UserInput* ui;
@@ -19,7 +22,6 @@ class Controller {
 public:
     void Logic(UserInput* _ui, Data* _d);
 };
-
 
 
 

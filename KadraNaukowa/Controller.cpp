@@ -11,10 +11,13 @@
 void Controller::Logic(UserInput* _ui, Data* _d){
     //get the data from user
     vector<string> fullnameInput = _ui->getFullName();
+    //int IDinput = _ui->pickScientistDelete();
     //store the data
     _d->addScientist(fullnameInput);
+    //_d->removeScientist(IDinput);
     //retrive the data
     vector<Scientist> retrivedData = _d->retrieveScientists();
+    
     //display the data
     _ui->displayScientists(retrivedData);
     

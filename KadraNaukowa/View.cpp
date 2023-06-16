@@ -10,12 +10,15 @@
 vector<string> UserInput::getFullName(){
     string name;
     string surname;
-    cout<<"Name: ";
-    cin>>name;
-    fullname.push_back(name);
-    cout<<"Surname: ";
-    cin>>surname;
-    fullname.push_back(surname);
+    for(int  i =0; i<2; i++){
+        cout<<"Name: ";
+        cin>>name;
+        fullname.push_back(name);
+        cout<<"Surname: ";
+        cin>>surname;
+        fullname.push_back(surname);
+    }
+  
     return fullname;
 }
 
@@ -25,6 +28,13 @@ void UserInput::displayScientists(vector<Scientist> scientistsI){
         cout<<"Surname that you entered: "<<scientistsI[i].surname<<endl;
     }
     
+}
+
+int UserInput::pickScientistDelete(){
+    int ID;
+    cout<<"Enter ID of scientist you want to remove: ";
+    cin>>ID;
+    return ID;
 }
 
 

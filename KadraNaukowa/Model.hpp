@@ -16,25 +16,12 @@ class Data {
 public:
     void addScientist(vector<string> fni);
     vector<Scientist> retrieveScientists();
+    void removeScientist(int id);
+    vector<Scientist> retriveRemovedScientists();
 };
 
 
 
-//Wszytsko powiązane z przechowywaniem danych
-//namespace Model {
-//
-//class Researcher {
-//public:
-//    string name;
-//    string surname;
-//    vector<Researcher> researchers;
-//public:
-//    Researcher(string n = "Jan", string s = "Kowalski");
-//    void addResearcher(string n, string s);
-//    vector<Researcher> retrieveResearchers();
-//
-//};
-//
-//}
+
 
 #endif /* model_hpp */

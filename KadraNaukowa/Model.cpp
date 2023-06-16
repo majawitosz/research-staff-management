@@ -19,7 +19,16 @@ void Data::addScientist(vector<string> fni){
 vector<Scientist> Data::retrieveScientists(){
     return scientists;
 }
-
+void Data::removeScientist(int id){
+    vector<Scientist> removedScientists;
+    for(int i = 0; i<removedScientists.size(); i++){
+        if (id != scientists[i].id){
+            removedScientists.push_back(scientists[i]);
+        }
+    }
+    scientists = removedScientists;
+    retrieveScientists();
+}
 
 //Model::Researcher::Researcher(string n, string s): name(n), surname(s){};
 //

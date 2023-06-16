@@ -7,4 +7,4 @@
 
 #include "Scientist.hpp"
 
-Scientist::Scientist(string n, string s): name(s), surname(s){}
+Scientist::Scientist(string n, string s, int i): name(n), surname(s), id(i){}

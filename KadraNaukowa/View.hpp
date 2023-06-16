@@ -18,7 +18,7 @@ class UserInput {
 public:
     vector<string> getFullName();
     void displayScientists(vector<Scientist> scientistsI);
-   
+    int pickScientistDelete();
 };
 
 
