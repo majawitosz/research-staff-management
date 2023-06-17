@@ -13,8 +13,9 @@ using namespace std;
 
 class Data {
     vector<Scientist> scientists;
+    
 public:
-    void addScientist(vector<string> fni);
+    void addScientist(string name, string surname);
     vector<Scientist> retrieveScientists();
     void removeScientist(int id);
     vector<Scientist> retriveRemovedScientists();

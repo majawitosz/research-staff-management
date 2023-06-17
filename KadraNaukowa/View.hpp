@@ -14,10 +14,10 @@
 using namespace std;
 
 class UserInput {
-    vector<string> fullname;
 public:
-    vector<string> getFullName();
-    void displayScientists(vector<Scientist> scientistsI);
+    string getName();
+    string getSurname();
+    void displayScientists(vector<Scientist> retrivedData);
     int pickScientistDelete();
 };
 

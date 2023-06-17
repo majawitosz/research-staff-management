@@ -7,32 +7,46 @@
 
 #include "View.hpp"
 
-vector<string> UserInput::getFullName(){
-    string name;
-    string surname;
-    for(int  i =0; i<2; i++){
-        cout<<"Name: ";
-        cin>>name;
-        fullname.push_back(name);
-        cout<<"Surname: ";
-        cin>>surname;
-        fullname.push_back(surname);
-    }
-  
-    return fullname;
+//vector<string> UserInput::getFullName(){
+//    string name;
+//    string surname;
+//    for(int  i =0; i<2; i++){
+//        cout<<"Name: ";
+//        cin>>name;
+//        fullname.push_back(name);
+//        cout<<"Surname: ";
+//        cin>>surname;
+//        fullname.push_back(surname);
+//    }
+//
+//    return fullname;
+//}
+string UserInput::getName(){
+    cout<<"Name: ";
+    string n;
+    cin>>n;
+    return n;
+}
+string UserInput::getSurname(){
+    cout<<"Surname: ";
+    string s;
+    cin>>s;
+    return s;
 }
 
-void UserInput::displayScientists(vector<Scientist> scientistsI){
-    for(int i = 0; i<scientistsI.size(); i++){
-        cout<<"Name that you entered: "<<scientistsI[i].name<<endl;
-        cout<<"Surname that you entered: "<<scientistsI[i].surname<<endl;
+void UserInput::displayScientists(vector<Scientist> retrivedData){
+    cout<<endl;
+    cout<<"Updated list of scientists: "<<endl;
+    for(int i = 0; i<retrivedData.size(); i++){
+        cout<<"Name: "<<retrivedData[i].name<<endl;
+        cout<<"Surname: "<<retrivedData[i].surname<<endl;
     }
     
 }
 
 int UserInput::pickScientistDelete(){
-    int ID;
     cout<<"Enter ID of scientist you want to remove: ";
+    int ID;
     cin>>ID;
     return ID;
 }

@@ -19,6 +19,7 @@ class Scientist {
 public:
     string name;
     string surname;
+    static int usersCreated;
     int id;
     Scientist(string = "John", string ="Smith", int = 0);
     

@@ -9,22 +9,12 @@
 #include "Controller.hpp"
 using namespace std;
 
+int Scientist::usersCreated = -1;
 
 int main(int argc, const char * argv[]) {
-   
-  
-    
     UserInput u1;
     Data d1;
     Controller c1;
     c1.Logic(&u1, &d1);
-    
-//    View::ResearcherInput r1;
-//
-//    Model::Researcher m1;
-//
-//    Controller::Logic l1(&r1, &m1);
-//
-
     return 0;
 }
