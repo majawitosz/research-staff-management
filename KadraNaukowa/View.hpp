@@ -15,10 +15,12 @@ using namespace std;
 
 class UserInput {
 public:
+    int promptStart();
     string getName();
     string getSurname();
     void displayScientists(vector<Scientist> retrivedData);
     int pickScientistDelete();
+    
 };
 
 

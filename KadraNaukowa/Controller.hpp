@@ -15,10 +15,11 @@
 
 
 class Controller {
-    UserInput* ui;
-    Data* d;
+    UserInput* userInput;
+    Data* data;
 public:
-    void Logic(UserInput* _ui, Data* _d);
+    char keyboardInput();
+    void logic(UserInput* ui, Data* d);
 };
 
 

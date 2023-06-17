@@ -6,42 +6,61 @@
 //
 
 #include "Controller.hpp"
+//#include <unistd.h>
+//
+//
+//char Controller::keyboardInput(){
+//    char keyInput;
+//    system("stty raw");
+//    keyInput = getchar();
+//    system("stty cooked");
+//    return keyInput;
+//}
 
-
-void Controller::Logic(UserInput* _ui, Data* _d){
-    //get the data from user
-    for(int i =0; i<3; i++){
-        
-        string name = _ui->getName();
-        string surname = _ui->getSurname();
-        _d->addScientist(name, surname);
+void Controller::logic(UserInput* ui, Data* d){
+    int input = ui->promptStart();
+    
+    while (input != 0) {
+        switch (input) {
+            case 1: {
+                string name = ui->getName();
+                string surname = ui->getSurname();
+                d->addScientist(name, surname);
+                break;
+            }
+            case 2: {
+                vector<Scientist> retrivedData = d->retrieveScientists();
+                ui->displayScientists(retrivedData);
+                break;
+            }
+            case 3: {
+                int IDinput = ui->pickScientistDelete();
+                d->removeScientist(IDinput);
+                break;
+            }
+            default:
+                break;
+        }
     }
-    int IDinput = _ui->pickScientistDelete();
-    //store the data
-    _d->removeScientist(IDinput);
-    //retrive the data
-    vector<Scientist> retrivedData = _d->retrieveScientists();
-    //display the data
-    _ui->displayScientists(retrivedData);
-   
 }
+                    
+//    int input = ui->promptStart();
+//    if (input == 1){                //add scientist
+//        string name = ui->getName();
+//        string surname = ui->getSurname();
+//        d->addScientist(name, surname);
+//    } else if (input == 2){         //display scientists
+//        vector<Scientist> retrivedData = d->retrieveScientists();
+//        ui->displayScientists(retrivedData);
+//    } else if (input == 3) {        //remove scientist
+//        int IDinput = ui->pickScientistDelete();
+//        d->removeScientist(IDinput);
+//    }
+//
 
 
-//Controller::Logic::Logic(View::ResearcherInput* _ri, Model::Researcher* _r): ri(_ri), r(_r) {
-//   doLogic();
-//}
-//
-//void Controller::Logic::doLogic(){
-//    //get the data from user
-//    string n = ri->getName();
-//    string s = ri->getSurname();
-//    //store the data
-//    r->addResearcher(n,s);
-//    //retrive the data
-//    vector<Model::Researcher> retrivedData = r->retrieveResearchers();
-//    ri->displayResearchers(retrivedData);
-//
-//}
+
+
     
 
 

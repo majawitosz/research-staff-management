@@ -7,20 +7,17 @@
 
 #include "View.hpp"
 
-//vector<string> UserInput::getFullName(){
-//    string name;
-//    string surname;
-//    for(int  i =0; i<2; i++){
-//        cout<<"Name: ";
-//        cin>>name;
-//        fullname.push_back(name);
-//        cout<<"Surname: ";
-//        cin>>surname;
-//        fullname.push_back(surname);
-//    }
-//
-//    return fullname;
-//}
+int UserInput::promptStart(){
+    cout<<"Pick an action "<<endl;
+    cout<<"Add scientist press 1"<<endl;
+    cout<<"Display scientists press 2"<<endl;
+    cout<<"Remove scientist press 3"<<endl;
+    int input;
+    cin>>input;
+    return input;
+}
+
+
 string UserInput::getName(){
     cout<<"Name: ";
     string n;

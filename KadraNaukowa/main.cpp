@@ -15,6 +15,6 @@ int main(int argc, const char * argv[]) {
     UserInput u1;
     Data d1;
     Controller c1;
-    c1.Logic(&u1, &d1);
+    c1.logic(&u1, &d1);
     return 0;
 }
