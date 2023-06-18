@@ -18,15 +18,20 @@
 //}
 
 void Controller::logic(UserInput* ui, Data* d){
-    int input = ui->promptStart();
-    
-    while (input != 0) {
+    bool exitProgram = false;
+    while (!exitProgram) {
+        int input = ui->promptStart();
         switch (input) {
+            case 0: {
+                exitProgram = true;
+                break;
+            }
             case 1: {
                 string name = ui->getName();
                 string surname = ui->getSurname();
                 d->addScientist(name, surname);
                 break;
+               
             }
             case 2: {
                 vector<Scientist> retrivedData = d->retrieveScientists();
@@ -34,6 +39,8 @@ void Controller::logic(UserInput* ui, Data* d){
                 break;
             }
             case 3: {
+                vector<Scientist> retrivedData = d->retrieveScientists();
+                ui->displayScientists(retrivedData);
                 int IDinput = ui->pickScientistDelete();
                 d->removeScientist(IDinput);
                 break;

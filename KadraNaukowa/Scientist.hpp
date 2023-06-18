@@ -15,7 +15,6 @@ using namespace std;
 
 
 class Scientist {
-    
 public:
     string name;
     string surname;
@@ -23,6 +22,21 @@ public:
     int id;
     Scientist(string = "John", string ="Smith", int = 0);
     
+};
+
+class Algorythm {
+public:
+    virtual void calculateRating(Scientist& rating) = 0;
+};
+
+class Rating1: public Algorythm {
+public:
+    void calculateRating(Scientist& rating);
+};
+
+class Rating2 : public Algorythm {
+public:
+    void calculateRating(Scientist& rating);
 };
 
 #endif /* Scientist_hpp */

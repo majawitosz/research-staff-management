@@ -25,21 +25,4 @@ public:
 
 
 
-//namespace Model {
-//class Researcher;
-//}
-//
-//
-//namespace View {
-//
-//class ResearcherInput {
-//
-//public:
-//    string getName();
-//    string getSurname();
-//    void displayResearchers(vector<Model::Researcher>& researchers);
-//
-//};
-//}
-
 #endif /* view_hpp */
