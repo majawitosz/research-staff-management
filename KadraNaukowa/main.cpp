@@ -2,19 +2,19 @@
 //  main.cpp
 //  KadraNaukowa
 //
-//  Created by Maja Witosz on 14/06/2023.
+//  Created by Maja Witosz on 12/06/2023.
 //
 
-#include <iostream>
-#include "Controller.hpp"
-using namespace std;
+
+#include "Logic.hpp"
+
 
 int Scientist::usersCreated = -1;
 
 int main(int argc, const char * argv[]) {
     UserInput u1;
     Data d1;
-    Controller c1;
-    c1.logic(&u1, &d1);
+    Logic l1;
+    l1.logic(&u1, &d1);
     return 0;
 }

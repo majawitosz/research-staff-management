@@ -5,11 +5,10 @@
 //  Created by Maja Witosz on 14/06/2023.
 //
 
-#ifndef Model_hpp
-#define Model_hpp
+#ifndef Data_hpp
+#define Data_hpp
 #include "Scientist.hpp"
-#include <vector>
-using namespace std;
+
 
 class Data {
     vector<Scientist> scientists;
@@ -25,4 +24,4 @@ public:
 
 
 
-#endif /* model_hpp */
+#endif /* data_hpp */

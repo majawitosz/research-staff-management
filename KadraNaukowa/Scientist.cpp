@@ -2,7 +2,7 @@
 //  Scientist.cpp
 //  KadraNaukowa
 //
-//  Created by Maja Witosz on 15/06/2023.
+//  Created by Maja Witosz on 12/06/2023.
 //
 
 #include "Scientist.hpp"

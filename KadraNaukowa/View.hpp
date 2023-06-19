@@ -2,16 +2,13 @@
 //  view.hpp
 //  KadraNaukowa
 //
-//  Created by Maja Witosz on 14/06/2023.
+//  Created by Maja Witosz on 12/06/2023.
 //
 
 #ifndef View_hpp
 #define View_hpp
-#include "Model.hpp"
-#include <iostream>
-#include <string>
-#include <vector>
-using namespace std;
+#include "Data.hpp"
+
 
 class UserInput {
 public:

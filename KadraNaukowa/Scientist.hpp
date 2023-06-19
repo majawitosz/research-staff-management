@@ -2,7 +2,7 @@
 //  Scientist.hpp
 //  KadraNaukowa
 //
-//  Created by Maja Witosz on 15/06/2023.
+//  Created by Maja Witosz on 12/06/2023.
 //
 
 #ifndef Scientist_hpp
@@ -24,17 +24,25 @@ public:
     
 };
 
+class ScientistRates :public Scientist{
+    pair<int, double> bachelorThesis;
+    pair<int, double> masterThesis;
+    pair<int, double> phDThesis;
+    int yearsRated;
+    
+};
+
 class Algorythm {
 public:
     virtual void calculateRating(Scientist& rating) = 0;
 };
 
-class Rating1: public Algorythm {
+class SupervisonRating :public Algorythm {
 public:
     void calculateRating(Scientist& rating);
 };
 
-class Rating2 : public Algorythm {
+class SurveysRating :public Algorythm {
 public:
     void calculateRating(Scientist& rating);
 };
