@@ -15,13 +15,7 @@
 using namespace std;
 
 
-class Logic {
-    UserInput* userInput;
-    Data* data;
-public:
-    char keyboardInput();
-    void logic(UserInput* ui, Data* d);
-};
+
 
 
 #endif /* Logic_hpp */

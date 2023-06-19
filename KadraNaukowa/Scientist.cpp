@@ -7,6 +7,8 @@
 
 #include "Scientist.hpp"
 
+int Scientist::usersCreated = -1;
+
 Scientist::Scientist(string n, string s, int i): name(n), surname(s), id(i){
     usersCreated ++;
     id = usersCreated;

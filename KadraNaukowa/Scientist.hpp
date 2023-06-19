@@ -24,11 +24,11 @@ public:
     
 };
 
-class ScientistRates :public Scientist{
-    pair<int, double> bachelorThesis;
-    pair<int, double> masterThesis;
-    pair<int, double> phDThesis;
-    int yearsRated;
+class ScientistRates {
+//    pair<int, double> bachelorThesis;
+//    pair<int, double> masterThesis;
+//    pair<int, double> phDThesis;
+//    int yearsRated;
     
 };
 

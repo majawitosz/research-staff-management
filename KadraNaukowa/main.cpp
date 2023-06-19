@@ -9,12 +9,13 @@
 #include "Logic.hpp"
 
 
-int Scientist::usersCreated = -1;
+
 
 int main(int argc, const char * argv[]) {
     UserInput u1;
     Data d1;
-    Logic l1;
-    l1.logic(&u1, &d1);
+    Scientist s1;
+    InputHandler i1;
+    i1.logic(&u1, &d1, &s1);
     return 0;
 }
