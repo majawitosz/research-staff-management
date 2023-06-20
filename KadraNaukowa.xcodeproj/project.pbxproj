@@ -10,8 +10,6 @@
 		DC08E5862A3B9C01002777D1 /* Scientist.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DC08E5842A3B9C01002777D1 /* Scientist.cpp */; };
 		DC777BA82A3A03A900803ED2 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DC777BA72A3A03A900803ED2 /* main.cpp */; };
 		DC777BB62A3A078200803ED2 /* View.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DC777BB42A3A078200803ED2 /* View.cpp */; };
-		DC777BB92A3A079300803ED2 /* Logic.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DC777BB72A3A079300803ED2 /* Logic.cpp */; };
-		DC777BBC2A3A6A1B00803ED2 /* Data.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DC777BBA2A3A6A1B00803ED2 /* Data.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -33,10 +31,6 @@
 		DC777BA72A3A03A900803ED2 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		DC777BB42A3A078200803ED2 /* View.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = View.cpp; path = KadraNaukowa/View.cpp; sourceTree = "<group>"; };
 		DC777BB52A3A078200803ED2 /* View.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = View.hpp; path = KadraNaukowa/View.hpp; sourceTree = "<group>"; };
-		DC777BB72A3A079300803ED2 /* Logic.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = Logic.cpp; path = KadraNaukowa/Logic.cpp; sourceTree = "<group>"; };
-		DC777BB82A3A079300803ED2 /* Logic.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = Logic.hpp; path = KadraNaukowa/Logic.hpp; sourceTree = "<group>"; };
-		DC777BBA2A3A6A1B00803ED2 /* Data.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = Data.cpp; path = KadraNaukowa/Data.cpp; sourceTree = "<group>"; };
-		DC777BBB2A3A6A1B00803ED2 /* Data.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = Data.hpp; path = KadraNaukowa/Data.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,10 +49,6 @@
 			children = (
 				DC08E5842A3B9C01002777D1 /* Scientist.cpp */,
 				DC08E5852A3B9C01002777D1 /* Scientist.hpp */,
-				DC777BBA2A3A6A1B00803ED2 /* Data.cpp */,
-				DC777BBB2A3A6A1B00803ED2 /* Data.hpp */,
-				DC777BB72A3A079300803ED2 /* Logic.cpp */,
-				DC777BB82A3A079300803ED2 /* Logic.hpp */,
 				DC777BB42A3A078200803ED2 /* View.cpp */,
 				DC777BB52A3A078200803ED2 /* View.hpp */,
 				DC777BA62A3A03A900803ED2 /* KadraNaukowa */,
@@ -141,9 +131,7 @@
 			files = (
 				DC777BB62A3A078200803ED2 /* View.cpp in Sources */,
 				DC08E5862A3B9C01002777D1 /* Scientist.cpp in Sources */,
-				DC777BB92A3A079300803ED2 /* Logic.cpp in Sources */,
 				DC777BA82A3A03A900803ED2 /* main.cpp in Sources */,
-				DC777BBC2A3A6A1B00803ED2 /* Data.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

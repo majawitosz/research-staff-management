@@ -8,14 +8,15 @@
 #include "View.hpp"
 
 int UserInput::promptStart(){
-    cout<<" ------------------------------"<<endl;
-    cout<<"|        Pick an action        |"<<endl;
-    cout<<"|    PRESS 1: add scientist    |"<<endl;
-    cout<<"|  PRESS 2: display scientists |"<<endl;
-    cout<<"|   PRESS 3: remove scientist  |"<<endl;
-    cout<<"|        PRESS 0: exit         |"<<endl;
-    cout<<" ------------------------------"<<endl;
-  
+    cout<<" ----------------------------------"<<endl;
+    cout<<"|          Pick an action          |"<<endl;
+    cout<<"|      PRESS 1: add scientist      |"<<endl;
+    cout<<"|    PRESS 2: display scientists   |"<<endl;
+    cout<<"|     PRESS 3: remove scientist    |"<<endl;
+    cout<<"|   PRESS 4: for basic evaluation  |"<<endl;
+    cout<<"| PRESS 5: fod advanced evaluation |"<<endl;
+    cout<<"|          PRESS 0: exit           |"<<endl;
+    cout<<" ----------------------------------"<<endl;
     int input;
     cin>>input;
     return input;
@@ -44,7 +45,6 @@ void UserInput::displayScientists(vector<Scientist> retrivedData){
         cout<<"Surname: "<<retrivedData[i].getSurnameScientist()<<endl;
         cout<<endl;
     }
-    
 }
 
 int UserInput::pickScientistDelete(){
@@ -53,7 +53,16 @@ int UserInput::pickScientistDelete(){
     cin>>ID;
     return ID;
 }
+int UserInput::pickEvaluationMethod(){
+    cout<<"Choose ID of scientist that you want to calculate rating for"<<endl;
+    int idEvaluation;
+    cin>>idEvaluation;
+    return idEvaluation;
+}
 
+void UserInput::displayEvaluationResult(double result){
+    cout<<"The result od evaluation is: "<<result<<endl;
+}
 
 void InputHandler::logic(UserInput* ui, Scientist* s){
     bool exitProgram = false;
@@ -69,7 +78,6 @@ void InputHandler::logic(UserInput* ui, Scientist* s){
                 string surname = ui->getSurname();
                 s->addScientist(name, surname);
                 break;
-               
             }
             case 2: {
                 vector<Scientist> retrivedData = s->retrieveScientists();
@@ -82,6 +90,20 @@ void InputHandler::logic(UserInput* ui, Scientist* s){
                 int IDinput = ui->pickScientistDelete();
                 s->removeScientist(IDinput);
                 break;
+            }
+            case 4: {
+                int idEvaluation = ui->pickEvaluationMethod();
+                Evaluation* basic = new BasicEvaluation();
+                s->setEvaluationMethod(basic);
+                double result = s->calculatePeriodicScore(idEvaluation);
+                ui->displayEvaluationResult(result);
+            }
+            case 5: {
+                int idEvaluation = ui->pickEvaluationMethod();
+                Evaluation* advanced = new AdvancedEvaluation();
+                s->setEvaluationMethod(advanced);
+                double result = s->calculatePeriodicScore(idEvaluation);
+                ui->displayEvaluationResult(result);
             }
             default:
                 break;

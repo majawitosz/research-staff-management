@@ -13,13 +13,10 @@ Scientist::Scientist(string n, string s, int i): name(n), surname(s), id(i){
     usersCreated ++;
     id = usersCreated;
 }
-
-
 void Scientist::addScientist(string name, string surname){
     Scientist si(name, surname);
     scientists.push_back(si);
 }
-
 void Scientist::removeScientist(int id){
     vector<Scientist> removedScientists;
     for(int i = 0; i<scientists.size(); i++){
@@ -28,21 +25,40 @@ void Scientist::removeScientist(int id){
         }
     }
     scientists = removedScientists;
-
 }
-
 vector<Scientist> Scientist::retrieveScientists(){
     return scientists;
 }
-
-
 string Scientist::getNameScientist(){
     return name;
 }
 string Scientist::getSurnameScientist(){
     return surname;
-
 }
 int Scientist::getId(){
     return id;
+}
+//vector<Scientist> Scientist::getAllScientists(){
+//    return scientists;
+//}
+double BasicEvaluation::calculateRating(Scientist& scientist){
+    
+    return 1.5;
+}
+double AdvancedEvaluation::calculateRating(Scientist& scientist){
+    return 2.5;
+}
+
+void Scientist::setEvaluationMethod(Evaluation* method){
+    evaluation = method;
+   
+}
+
+double Scientist::calculatePeriodicScore(int i){
+    for(int j = 0; j<scientists.size(); j++){
+        if (i == scientists[j].id){
+            return evaluation->calculateRating(*this);
+        }
+    }
+    return 0.0;
 }

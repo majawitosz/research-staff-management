@@ -14,45 +14,43 @@
 using namespace std;
 
 
+class Evaluation;
+
 class Scientist {
     string name;
     string surname;
     static int usersCreated;
     int id;
     vector<Scientist> scientists;
+    double basicRate;
+    double advancedRate;
+    Evaluation* evaluation;
 public:
+    Scientist(string = "John", string ="Smith", int = 0);
     string getNameScientist();
     string getSurnameScientist();
     int getId();
+   // vector<Scientist> getAllScientists();
     void addScientist(string name, string surname);
     vector<Scientist> retrieveScientists();
     void removeScientist(int id);
-    vector<Scientist> retriveRemovedScientists();
-    Scientist(string = "John", string ="Smith", int = 0);
-    
+    void setEvaluationMethod(Evaluation* method);
+    double calculatePeriodicScore(int i);
 };
 
-class ScientistRates {
-//    pair<int, double> bachelorThesis;
-//    pair<int, double> masterThesis;
-//    pair<int, double> phDThesis;
-//    int yearsRated;
-    
-};
-
-class Algorythm {
+class Evaluation {
 public:
-    virtual void calculateRating(Scientist& rating) = 0;
+    virtual double calculateRating(Scientist& scientist) = 0;
 };
 
-class SupervisonRating :public Algorythm {
+class BasicEvaluation :public Evaluation {
 public:
-    void calculateRating(Scientist& rating);
+    double calculateRating(Scientist& scientist);
 };
 
-class SurveysRating :public Algorythm {
+class AdvancedEvaluation :public Evaluation {
 public:
-    void calculateRating(Scientist& rating);
+    double calculateRating(Scientist& scientist);
 };
 
 #endif /* Scientist_hpp */

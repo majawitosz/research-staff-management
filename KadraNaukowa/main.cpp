@@ -6,9 +6,8 @@
 //
 
 
-#include "Logic.hpp"
-
-
+#include "Scientist.hpp"
+#include "View.hpp"
 
 
 int main(int argc, const char * argv[]) {

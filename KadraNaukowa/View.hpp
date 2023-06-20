@@ -7,7 +7,7 @@
 
 #ifndef View_hpp
 #define View_hpp
-#include "Data.hpp"
+#include "Scientist.hpp"
 
 
 class UserInput {
@@ -17,7 +17,8 @@ public:
     string getSurname();
     void displayScientists(vector<Scientist> retrivedData);
     int pickScientistDelete();
-    
+    int pickEvaluationMethod();
+    void displayEvaluationResult(double result);
 };
 
 class InputHandler {
