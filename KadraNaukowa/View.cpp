@@ -39,17 +39,15 @@ void UserInput::displayScientists(vector<Scientist> retrivedData){
     cout<<endl;
     cout<<"List of scientists: "<<endl;
     for(int i = 0; i<retrivedData.size(); i++){
-        cout<<"ID: ["<<retrivedData[i].id<<"]"<<endl;
-        cout<<"Name: "<<retrivedData[i].name<<endl;
-        cout<<"Surname: "<<retrivedData[i].surname<<endl;
+        cout<<"ID: ["<<retrivedData[i].getId()<<"]"<<endl;
+        cout<<"Name: "<<retrivedData[i].getNameScientist()<<endl;
+        cout<<"Surname: "<<retrivedData[i].getSurnameScientist()<<endl;
         cout<<endl;
     }
     
 }
 
 int UserInput::pickScientistDelete(){
-    //cout<<"Amount of scientists: "<<Scientist::usersCreated+1<<endl;
-    
     cout<<"Enter ID of scientist you want to remove: ";
     int ID;
     cin>>ID;
@@ -57,7 +55,7 @@ int UserInput::pickScientistDelete(){
 }
 
 
-void InputHandler::logic(UserInput* ui, Data* d, Scientist* s){
+void InputHandler::logic(UserInput* ui, Scientist* s){
     bool exitProgram = false;
     while (!exitProgram) {
         int input = ui->promptStart();
@@ -69,20 +67,20 @@ void InputHandler::logic(UserInput* ui, Data* d, Scientist* s){
             case 1: {
                 string name = ui->getName();
                 string surname = ui->getSurname();
-                d->addScientist(name, surname);
+                s->addScientist(name, surname);
                 break;
                
             }
             case 2: {
-                vector<Scientist> retrivedData = d->retrieveScientists();
+                vector<Scientist> retrivedData = s->retrieveScientists();
                 ui->displayScientists(retrivedData);
                 break;
             }
             case 3: {
-                vector<Scientist> retrivedData = d->retrieveScientists();
+                vector<Scientist> retrivedData = s->retrieveScientists();
                 ui->displayScientists(retrivedData);
                 int IDinput = ui->pickScientistDelete();
-                d->removeScientist(IDinput);
+                s->removeScientist(IDinput);
                 break;
             }
             default:

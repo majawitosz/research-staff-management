@@ -15,11 +15,19 @@ using namespace std;
 
 
 class Scientist {
-public:
     string name;
     string surname;
     static int usersCreated;
     int id;
+    vector<Scientist> scientists;
+public:
+    string getNameScientist();
+    string getSurnameScientist();
+    int getId();
+    void addScientist(string name, string surname);
+    vector<Scientist> retrieveScientists();
+    void removeScientist(int id);
+    vector<Scientist> retriveRemovedScientists();
     Scientist(string = "John", string ="Smith", int = 0);
     
 };

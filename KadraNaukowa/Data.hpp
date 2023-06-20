@@ -9,16 +9,16 @@
 #define Data_hpp
 #include "Scientist.hpp"
 
-
-class Data {
-    vector<Scientist> scientists;
-    
-public:
-    void addScientist(string name, string surname);
-    vector<Scientist> retrieveScientists();
-    void removeScientist(int id);
-    vector<Scientist> retriveRemovedScientists();
-};
+//
+//class Data {
+//    //vector<Scientist> scientists;
+//    
+//public:
+//    void addScientist(string name, string surname);
+//    vector<Scientist> retrieveScientists();
+//    void removeScientist(int id);
+//    vector<Scientist> retriveRemovedScientists();
+//};
 
 
 

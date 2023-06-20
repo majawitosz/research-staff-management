@@ -22,11 +22,10 @@ public:
 
 class InputHandler {
     UserInput* userInput;
-    Data* data;
     Scientist* scientist;
 public:
     char keyboardInput();
-    void logic(UserInput* ui, Data* d, Scientist* s);
+    void logic(UserInput* ui, Scientist* s);
 };
 
 #endif /* view_hpp */
