@@ -11,6 +11,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <random>
 using namespace std;
 
 
@@ -21,16 +22,15 @@ class Scientist {
     string surname;
     static int usersCreated;
     int id;
-    vector<Scientist> scientists;
     double basicRate;
     double advancedRate;
+    vector<Scientist> scientists;
     Evaluation* evaluation;
 public:
     Scientist(string = "John", string ="Smith", int = 0);
     string getNameScientist();
     string getSurnameScientist();
     int getId();
-   // vector<Scientist> getAllScientists();
     void addScientist(string name, string surname);
     vector<Scientist> retrieveScientists();
     void removeScientist(int id);

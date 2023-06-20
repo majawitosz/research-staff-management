@@ -14,7 +14,7 @@ int UserInput::promptStart(){
     cout<<"|    PRESS 2: display scientists   |"<<endl;
     cout<<"|     PRESS 3: remove scientist    |"<<endl;
     cout<<"|   PRESS 4: for basic evaluation  |"<<endl;
-    cout<<"| PRESS 5: fod advanced evaluation |"<<endl;
+    cout<<"| PRESS 5: for advanced evaluation |"<<endl;
     cout<<"|          PRESS 0: exit           |"<<endl;
     cout<<" ----------------------------------"<<endl;
     int input;
@@ -96,7 +96,9 @@ void InputHandler::logic(UserInput* ui, Scientist* s){
                 Evaluation* basic = new BasicEvaluation();
                 s->setEvaluationMethod(basic);
                 double result = s->calculatePeriodicScore(idEvaluation);
+               // s->addScientistRate(result);
                 ui->displayEvaluationResult(result);
+                break;
             }
             case 5: {
                 int idEvaluation = ui->pickEvaluationMethod();
@@ -104,6 +106,7 @@ void InputHandler::logic(UserInput* ui, Scientist* s){
                 s->setEvaluationMethod(advanced);
                 double result = s->calculatePeriodicScore(idEvaluation);
                 ui->displayEvaluationResult(result);
+                break;
             }
             default:
                 break;

@@ -38,20 +38,25 @@ string Scientist::getSurnameScientist(){
 int Scientist::getId(){
     return id;
 }
-//vector<Scientist> Scientist::getAllScientists(){
-//    return scientists;
-//}
+
 double BasicEvaluation::calculateRating(Scientist& scientist){
-    
-    return 1.5;
+    random_device rd;
+    mt19937 gen(rd());
+    uniform_int_distribution<> distr(0.0,100.0);
+    double randomValue1 = distr(gen);
+    return randomValue1;
 }
+
 double AdvancedEvaluation::calculateRating(Scientist& scientist){
-    return 2.5;
+    random_device rd;
+    mt19937 gen(rd());
+    uniform_int_distribution<> distr1(101.0, 200.0);
+    double randomValue2 = distr1(gen);
+    return randomValue2;
 }
 
 void Scientist::setEvaluationMethod(Evaluation* method){
     evaluation = method;
-   
 }
 
 double Scientist::calculatePeriodicScore(int i){
@@ -62,3 +67,4 @@ double Scientist::calculatePeriodicScore(int i){
     }
     return 0.0;
 }
+
