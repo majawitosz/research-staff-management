@@ -7,6 +7,7 @@
 
 #ifndef Scientist_hpp
 #define Scientist_hpp
+#include "Field.hpp"
 #include <stdio.h>
 #include <iostream>
 #include <string>
@@ -22,10 +23,9 @@ class Scientist {
     string surname;
     static int usersCreated;
     int id;
-    double basicRate;
-    double advancedRate;
     vector<Scientist> scientists;
     Evaluation* evaluation;
+    Field* field;
 public:
     Scientist(string = "John", string ="Smith", int = 0);
     string getNameScientist();

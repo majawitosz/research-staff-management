@@ -23,18 +23,18 @@ int UserInput::promptStart(){
 }
 
 
-string UserInput::getName(){
-    cout<<"Name: ";
-    string n;
-    cin>>n;
-    return n;
-}
-string UserInput::getSurname(){
-    cout<<"Surname: ";
-    string s;
-    cin>>s;
-    return s;
-}
+//string UserInput::getName(){
+//    cout<<"Name: ";
+//    string n;
+//    cin>>n;
+//    return n;
+//}
+//string UserInput::getSurname(){
+//    cout<<"Surname: ";
+//    string s;
+//    cin>>s;
+//    return s;
+//}
 
 void UserInput::displayScientists(vector<Scientist> retrivedData){
     cout<<endl;
@@ -47,24 +47,49 @@ void UserInput::displayScientists(vector<Scientist> retrivedData){
     }
 }
 
-int UserInput::pickScientistDelete(){
-    cout<<"Enter ID of scientist you want to remove: ";
-    int ID;
-    cin>>ID;
-    return ID;
-}
-int UserInput::pickEvaluationMethod(){
-    cout<<"Choose ID of scientist that you want to calculate rating for"<<endl;
-    int idEvaluation;
-    cin>>idEvaluation;
-    return idEvaluation;
-}
+//int UserInput::pickScientistDelete(){
+//    cout<<"Enter ID of scientist you want to remove: ";
+//    int ID;
+//    cin>>ID;
+//    return ID;
+//}
+//int UserInput::pickEvaluationMethod(){
+//    cout<<"Choose ID of scientist that you want to calculate rating for"<<endl;
+//    int idEvaluation;
+//    cin>>idEvaluation;
+//    return idEvaluation;
+//}
 
 void UserInput::displayEvaluationResult(double result){
     cout<<"The result od evaluation is: "<<result<<endl;
 }
+//string UserInput::fieldGetName(){
+//    cout<<"Name of the field: ";
+//    string fieldName;
+//    cin>>fieldName;
+//    return fieldName;
+//}
+//string UserInput::fieldGetDescription(){
+//    cout<<"Give short descrpition of the field: ";
+//    string fieldDescription;
+//    cin>> fieldDescription;
+//    return fieldDescription;
+//}
+//int UserInput::fieldGetAvgPoints(){
+//    cout<<"What is average amount of points of this field: ";
+//    int avgPoints;
+//    cin>>avgPoints;
+//    return avgPoints;
+//}
 
-void InputHandler::logic(UserInput* ui, Scientist* s){
+template <typename T> T UserInput::getUserInput(string prompt){
+    cout << prompt;
+    T input;
+    cin >> input;
+    return input;
+}
+
+void InputHandler::logic(UserInput* ui, Scientist* s, Field* f){
     bool exitProgram = false;
     while (!exitProgram) {
         int input = ui->promptStart();
@@ -74,8 +99,8 @@ void InputHandler::logic(UserInput* ui, Scientist* s){
                 break;
             }
             case 1: {
-                string name = ui->getName();
-                string surname = ui->getSurname();
+                string name = ui->getUserInput<string>("Name: ");
+                string surname = ui->getUserInput<string>("Surname: ");
                 s->addScientist(name, surname);
                 break;
             }
@@ -87,12 +112,12 @@ void InputHandler::logic(UserInput* ui, Scientist* s){
             case 3: {
                 vector<Scientist> retrivedData = s->retrieveScientists();
                 ui->displayScientists(retrivedData);
-                int IDinput = ui->pickScientistDelete();
+                int IDinput = ui->getUserInput<int>("Enter ID of scientist you want to remove: ");
                 s->removeScientist(IDinput);
                 break;
             }
             case 4: {
-                int idEvaluation = ui->pickEvaluationMethod();
+                int idEvaluation = ui->getUserInput<int>("Choose ID of scientist that you want to calculate rating for");
                 Evaluation* basic = new BasicEvaluation();
                 s->setEvaluationMethod(basic);
                 double result = s->calculatePeriodicScore(idEvaluation);
@@ -101,12 +126,18 @@ void InputHandler::logic(UserInput* ui, Scientist* s){
                 break;
             }
             case 5: {
-                int idEvaluation = ui->pickEvaluationMethod();
+                int idEvaluation = ui->getUserInput<int>("Choose ID of scientist that you want to calculate rating for");
                 Evaluation* advanced = new AdvancedEvaluation();
                 s->setEvaluationMethod(advanced);
                 double result = s->calculatePeriodicScore(idEvaluation);
                 ui->displayEvaluationResult(result);
                 break;
+            }
+            case 6: {
+//                string fn = ui->fieldGetName();
+//                string fd = ui->fieldGetDescription();
+//                int ap = ui->fieldGetAvgPoints();
+            
             }
             default:
                 break;
