@@ -2,31 +2,31 @@
 //  view.hpp
 //  KadraNaukowa
 //
-//  Created by Maja Witosz on 14/06/2023.
+//  Created by Maja Witosz on 12/06/2023.
 //
 
 #ifndef View_hpp
 #define View_hpp
-#include <iostream>
-#include <vector>
-#include <string>
-using namespace std;
-
-namespace Model {
-class Researcher;
-}
+#include "Scientist.hpp"
 
 
-namespace View {
-
-class ResearcherInput {
-  
+class UserInput {
 public:
-    string getName();
-    string getSurname();
-    void displayResearchers(vector<Model::Researcher>& researchers);
+    int promptStart();
+    template <typename T> T getUserInput(string prompt);
+    void displayScientists(vector<Scientist> retrivedData);
+    void displayEvaluationResult(double result);
+    void displayFields(vector<Field> retrivedData);
     
 };
-}
+
+class InputHandler {
+    UserInput* userInput;
+    Scientist* scientist;
+    Field* field;
+public:
+    char keyboardInput();
+    void logic(UserInput* ui, Scientist* s, Field* f);
+};
 
 #endif /* view_hpp */

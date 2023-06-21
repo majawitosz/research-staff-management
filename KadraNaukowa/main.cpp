@@ -2,28 +2,19 @@
 //  main.cpp
 //  KadraNaukowa
 //
-//  Created by Maja Witosz on 14/06/2023.
+//  Created by Maja Witosz on 12/06/2023.
 //
 
 
-#include "Logic.hpp"
+#include "Scientist.hpp"
 #include "View.hpp"
-#include "Model.hpp"
 
 
 int main(int argc, const char * argv[]) {
-    
-    View::ResearcherInput r1;
-   
-    Model::Researcher m1;
-
-    Controller::Logic l1(&r1, &m1);
-    
-    
-//    View::UserInput u1;
-//    Model::Storage s1;
-//    Controller::Logic l1(&u1, &s1);
-    
-  
+    UserInput u1;
+    Scientist s1;
+    Field f1;
+    InputHandler i1;
+    i1.logic(&u1, &s1, &f1);
     return 0;
 }

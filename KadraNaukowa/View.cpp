@@ -2,46 +2,119 @@
 //  view.cpp
 //  KadraNaukowa
 //
-//  Created by Maja Witosz on 14/06/2023.
+//  Created by Maja Witosz on 12/06/2023.
 //
 
 #include "View.hpp"
-#include "Model.hpp"
 
+int UserInput::promptStart(){
+    cout<<" ----------------------------------"<<endl;
+    cout<<"|          Pick an action          |"<<endl;
+    cout<<"|      PRESS 1: add scientist      |"<<endl;
+    cout<<"|    PRESS 2: display scientists   |"<<endl;
+    cout<<"|     PRESS 3: remove scientist    |"<<endl;
+    cout<<"|   PRESS 4: for basic evaluation  |"<<endl;
+    cout<<"| PRESS 5: for advanced evaluation |"<<endl;
+    cout<<"|        PRESS 6: add field        |"<<endl;
+    cout<<"|      PRESS 7: display fields     |"<<endl;
+    cout<<"|          PRESS 0: exit           |"<<endl;
+    cout<<" ----------------------------------"<<endl;
+    int input;
+    cin>>input;
+    return input;
+}
 
-string View::ResearcherInput::getName(){
-    string n;
-    cout<<"Name: ";
-    cin>>n;
-    return n;
+void UserInput::displayScientists(vector<Scientist> retrivedData){
+    cout<<endl;
+    cout<<"List of scientists: "<<endl;
+    for(int i = 0; i<retrivedData.size(); i++){
+        cout<<"ID: ["<<retrivedData[i].getId()<<"]"<<endl;
+        cout<<"Name: "<<retrivedData[i].getNameScientist()<<endl;
+        cout<<"Surname: "<<retrivedData[i].getSurnameScientist()<<endl;
+        cout<<endl;
+    }
 }
-string View::ResearcherInput::getSurname(){
-    string s;
-    cout<<"Surname: ";
-    cin>>s;
-    return s;
+
+void UserInput::displayEvaluationResult(double result){
+    cout<<"The result od evaluation is: "<<result<<endl;
 }
-void View::ResearcherInput::displayResearchers(vector<Model::Researcher>& researchers){
-    for(int i = 0; i<researchers.size(); i++) {
-        cout << "Name: " << researchers[i].name << endl;
-        cout << "Surname: "<<researchers[i].surname<<endl;
-        cout << endl;
-        
+void UserInput::displayFields(vector<Field> retrivedData){
+    cout<<endl;
+    cout<<"List of fields: "<<endl;
+    for(int i = 0; i<retrivedData.size(); i++){
+        cout<<"Name: "<<retrivedData[i].fieldGetName()<<endl;
+        cout<<"Description: "<<retrivedData[i].fieldDescription()<<endl;
+        cout<<"Average points: "<<retrivedData[i].fieldGetPoints()<<endl;
+        cout<<endl;
+    }
+}
+
+template <typename T> T UserInput::getUserInput(string prompt){
+    cout << prompt;
+    T input;
+    cin >> input;
+    return input;
+}
+
+void InputHandler::logic(UserInput* ui, Scientist* s, Field* f){
+    bool exitProgram = false;
+    while (!exitProgram) {
+        int input = ui->promptStart();
+        switch (input) {
+            case 0: {
+                exitProgram = true;
+                break;
+            }
+            case 1: {
+                string name = ui->getUserInput<string>("Name: ");
+                string surname = ui->getUserInput<string>("Surname: ");
+                s->addScientist(name, surname);
+                break;
+            }
+            case 2: {
+                vector<Scientist> retrivedData = s->retrieveScientists();
+                ui->displayScientists(retrivedData);
+                break;
+            }
+            case 3: {
+                vector<Scientist> retrivedData = s->retrieveScientists();
+                ui->displayScientists(retrivedData);
+                int IDinput = ui->getUserInput<int>("Enter ID of scientist you want to remove: ");
+                s->removeScientist(IDinput);
+                break;
+            }
+            case 4: {
+                int idEvaluation = ui->getUserInput<int>("Choose ID of scientist that you want to calculate rating for");
+                Evaluation* basic = new BasicEvaluation();
+                s->setEvaluationMethod(basic);
+                double result = s->calculatePeriodicScore(idEvaluation);
+               // s->addScientistRate(result);
+                ui->displayEvaluationResult(result);
+                break;
+            }
+            case 5: {
+                int idEvaluation = ui->getUserInput<int>("Choose ID of scientist that you want to calculate rating for");
+                Evaluation* advanced = new AdvancedEvaluation();
+                s->setEvaluationMethod(advanced);
+                double result = s->calculatePeriodicScore(idEvaluation);
+                ui->displayEvaluationResult(result);
+                break;
+            }
+            case 6: {
+                string name = ui->getUserInput<string>("Name of the field: ");
+                string description = ui->getUserInput<string>("Give short descrpition of the field: ");
+                int avgPoints = ui->getUserInput<int>("What is average amount of points of this field: ");
+                f->addField(name, description, avgPoints);
+            }
+            case 7: {
+                vector<Field> retrivedData = f->retriveFields();
+                ui->displayFields(retrivedData);
+            }
+            default:
+                break;
+        }
     }
 }
 
 
-//void View::UserInput::prompt(string i){
-//    cout<<i<<endl;
-//}
-//
-//void View::UserInput::prompt(int k){
-//    cout<<k<<endl;
-//}
-//
-//int View::UserInput::getInput(){
-//    int x;
-//    cin >>x;
-//    return x;
-//}
 
