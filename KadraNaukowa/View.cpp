@@ -15,26 +15,14 @@ int UserInput::promptStart(){
     cout<<"|     PRESS 3: remove scientist    |"<<endl;
     cout<<"|   PRESS 4: for basic evaluation  |"<<endl;
     cout<<"| PRESS 5: for advanced evaluation |"<<endl;
+    cout<<"|        PRESS 6: add field        |"<<endl;
+    cout<<"|      PRESS 7: display fields     |"<<endl;
     cout<<"|          PRESS 0: exit           |"<<endl;
     cout<<" ----------------------------------"<<endl;
     int input;
     cin>>input;
     return input;
 }
-
-
-//string UserInput::getName(){
-//    cout<<"Name: ";
-//    string n;
-//    cin>>n;
-//    return n;
-//}
-//string UserInput::getSurname(){
-//    cout<<"Surname: ";
-//    string s;
-//    cin>>s;
-//    return s;
-//}
 
 void UserInput::displayScientists(vector<Scientist> retrivedData){
     cout<<endl;
@@ -47,40 +35,19 @@ void UserInput::displayScientists(vector<Scientist> retrivedData){
     }
 }
 
-//int UserInput::pickScientistDelete(){
-//    cout<<"Enter ID of scientist you want to remove: ";
-//    int ID;
-//    cin>>ID;
-//    return ID;
-//}
-//int UserInput::pickEvaluationMethod(){
-//    cout<<"Choose ID of scientist that you want to calculate rating for"<<endl;
-//    int idEvaluation;
-//    cin>>idEvaluation;
-//    return idEvaluation;
-//}
-
 void UserInput::displayEvaluationResult(double result){
     cout<<"The result od evaluation is: "<<result<<endl;
 }
-//string UserInput::fieldGetName(){
-//    cout<<"Name of the field: ";
-//    string fieldName;
-//    cin>>fieldName;
-//    return fieldName;
-//}
-//string UserInput::fieldGetDescription(){
-//    cout<<"Give short descrpition of the field: ";
-//    string fieldDescription;
-//    cin>> fieldDescription;
-//    return fieldDescription;
-//}
-//int UserInput::fieldGetAvgPoints(){
-//    cout<<"What is average amount of points of this field: ";
-//    int avgPoints;
-//    cin>>avgPoints;
-//    return avgPoints;
-//}
+void UserInput::displayFields(vector<Field> retrivedData){
+    cout<<endl;
+    cout<<"List of fields: "<<endl;
+    for(int i = 0; i<retrivedData.size(); i++){
+        cout<<"Name: "<<retrivedData[i].fieldGetName()<<endl;
+        cout<<"Description: "<<retrivedData[i].fieldDescription()<<endl;
+        cout<<"Average points: "<<retrivedData[i].fieldGetPoints()<<endl;
+        cout<<endl;
+    }
+}
 
 template <typename T> T UserInput::getUserInput(string prompt){
     cout << prompt;
@@ -134,10 +101,14 @@ void InputHandler::logic(UserInput* ui, Scientist* s, Field* f){
                 break;
             }
             case 6: {
-//                string fn = ui->fieldGetName();
-//                string fd = ui->fieldGetDescription();
-//                int ap = ui->fieldGetAvgPoints();
-            
+                string name = ui->getUserInput<string>("Name of the field: ");
+                string description = ui->getUserInput<string>("Give short descrpition of the field: ");
+                int avgPoints = ui->getUserInput<int>("What is average amount of points of this field: ");
+                f->addField(name, description, avgPoints);
+            }
+            case 7: {
+                vector<Field> retrivedData = f->retriveFields();
+                ui->displayFields(retrivedData);
             }
             default:
                 break;

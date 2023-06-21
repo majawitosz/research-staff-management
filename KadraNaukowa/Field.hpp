@@ -19,8 +19,15 @@ class Field {
     string name;
     string description;
     int avgPoints;
+    vector<Field> fields;
 public:
-   // template <typename T> T addField(T n, T d, T a);
+    Field(string = "Mathematics", string ="text", int = 10);
+    void addField(string n, string d, int a);
+    vector<Field> retriveFields();
+    string fieldGetName();
+    string fieldDescription();
+    int fieldGetPoints();
+    
    
 };
 

@@ -13,16 +13,10 @@
 class UserInput {
 public:
     int promptStart();
-//    string getName();
-//    string getSurname();
-    void displayScientists(vector<Scientist> retrivedData);
-//    int pickScientistDelete();
-//    int pickEvaluationMethod();
-    void displayEvaluationResult(double result);
-//    string fieldGetName();
-//    string fieldGetDescription();
-//    int fieldGetAvgPoints();
     template <typename T> T getUserInput(string prompt);
+    void displayScientists(vector<Scientist> retrivedData);
+    void displayEvaluationResult(double result);
+    void displayFields(vector<Field> retrivedData);
     
 };
 

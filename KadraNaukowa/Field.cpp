@@ -8,7 +8,22 @@
 #include "Field.hpp"
 
 
-//template <typename T> T Field::addField(T n, T d, T a){
-//    cout<<"Name of the field: ";
-//    
-//}
+Field::Field(string n, string d, int a): name(n), description(d), avgPoints(a){}
+
+void Field::addField(string n, string d, int a){
+    Field fi(n ,d, a);
+    fields.push_back(fi);
+}
+
+vector<Field> Field::retriveFields(){
+    return fields;
+}
+string Field::fieldGetName(){
+    return name;
+}
+string Field::fieldDescription(){
+    return description;
+}
+int Field::fieldGetPoints(){
+    return avgPoints;
+}
