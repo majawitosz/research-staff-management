@@ -17,7 +17,7 @@ public:
     void displayScientists(vector<Scientist> retrivedData);
     void displayEvaluationResult(double result);
     void displayFields(vector<Field> retrivedData);
-    
+   
 };
 
 class InputHandler {
@@ -27,6 +27,7 @@ class InputHandler {
 public:
     char keyboardInput();
     void logic(UserInput* ui, Scientist* s, Field* f);
+    void errorHandling(int idInput, vector<Scientist> scientists);
 };
 
 #endif /* view_hpp */
