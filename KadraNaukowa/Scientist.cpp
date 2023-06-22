@@ -17,6 +17,7 @@ void Scientist::addScientist(string name, string surname){
     Scientist si(name, surname);
     scientists.push_back(si);
 }
+
 void Scientist::removeScientist(int id){
     vector<Scientist> removedScientists;
     for(int i = 0; i<scientists.size(); i++){
@@ -26,6 +27,8 @@ void Scientist::removeScientist(int id){
     }
     scientists = removedScientists;
 }
+   
+
 vector<Scientist> Scientist::retrieveScientists(){
     return scientists;
 }

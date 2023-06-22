@@ -56,6 +56,24 @@ template <typename T> T UserInput::getUserInput(string prompt){
     return input;
 }
 
+void InputHandler::errorHandling(int idInput, vector<Scientist> scientists){
+    bool scientistFound = false;
+    try {
+        for (int i = 0; i < scientists.size(); i++) {
+            if (scientists[i].getId() == idInput) {
+                scientistFound = true;
+                break;
+            }
+        }
+        if(!scientistFound)
+            throw 0;
+    }
+    catch (int &ex){
+        cerr<<"Scientist not found"<<endl;
+    }
+   
+}
+
 void InputHandler::logic(UserInput* ui, Scientist* s, Field* f){
     bool exitProgram = false;
     while (!exitProgram) {
@@ -80,6 +98,7 @@ void InputHandler::logic(UserInput* ui, Scientist* s, Field* f){
                 vector<Scientist> retrivedData = s->retrieveScientists();
                 ui->displayScientists(retrivedData);
                 int IDinput = ui->getUserInput<int>("Enter ID of scientist you want to remove: ");
+                errorHandling(IDinput, retrivedData);
                 s->removeScientist(IDinput);
                 break;
             }
