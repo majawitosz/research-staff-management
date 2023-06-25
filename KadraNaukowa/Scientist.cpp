@@ -7,7 +7,7 @@
 
 #include "Scientist.hpp"
 
-int Scientist::usersCreated = -1;
+int Scientist::usersCreated = -2;
 
 Scientist::Scientist(string n, string s,  Field* f, int i): name(n), surname(s), field(f), id(i){
     usersCreated ++;

@@ -109,7 +109,7 @@ void InputHandler::logic(UserInput* ui, Scientist* s, Field* f){
                 break;
             }
             case 4: {
-                int idEvaluation = ui->getUserInput<int>("Choose ID of scientist that you want to calculate rating for");
+                int idEvaluation = ui->getUserInput<int>("Choose ID of scientist that you want to calculate rating for: ");
                 Evaluation* basic = new BasicEvaluation();
                 s->setEvaluationMethod(basic);
                 double result = s->calculatePeriodicScore(idEvaluation);
@@ -118,7 +118,7 @@ void InputHandler::logic(UserInput* ui, Scientist* s, Field* f){
                 break;
             }
             case 5: {
-                int idEvaluation = ui->getUserInput<int>("Choose ID of scientist that you want to calculate rating for");
+                int idEvaluation = ui->getUserInput<int>("Choose ID of scientist that you want to calculate rating for: ");
                 Evaluation* advanced = new AdvancedEvaluation();
                 s->setEvaluationMethod(advanced);
                 double result = s->calculatePeriodicScore(idEvaluation);
