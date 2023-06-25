@@ -13,6 +13,7 @@
 #include <string>
 #include <vector>
 #include <random>
+#include <memory>
 using namespace std;
 
 
@@ -26,6 +27,7 @@ class Scientist {
     vector<Scientist> scientists;
     Evaluation* evaluation;
     Field* field;
+   
 public:
     Scientist(string = "John", string ="Smith", Field* f = nullptr, int = 0);
     string getNameScientist();
