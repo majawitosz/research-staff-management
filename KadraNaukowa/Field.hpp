@@ -19,14 +19,17 @@ class Field {
     string name;
     string description;
     int avgPoints;
+    int idF;
+    static int fieldsCreated;
     vector<Field> fields;
 public:
-    Field(string = "Mathematics", string ="text", int = 10);
+    Field(string = "Mathematics", string ="text", int = 10, int = 0);
     void addField(string n, string d, int a);
     vector<Field> retriveFields();
     string fieldGetName();
     string fieldDescription();
     int fieldGetPoints();
+    int getIdF();
     
     
    

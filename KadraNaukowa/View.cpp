@@ -31,6 +31,7 @@ void UserInput::displayScientists(vector<Scientist> retrivedData){
         cout<<"ID: ["<<retrivedData[i].getId()<<"]"<<endl;
         cout<<"Name: "<<retrivedData[i].getNameScientist()<<endl;
         cout<<"Surname: "<<retrivedData[i].getSurnameScientist()<<endl;
+        cout<<"Field: "<<retrivedData[i].getFieldName()<<endl;
         cout<<endl;
     }
 }
@@ -42,6 +43,7 @@ void UserInput::displayFields(vector<Field> retrivedData){
     cout<<endl;
     cout<<"List of fields: "<<endl;
     for(int i = 0; i<retrivedData.size(); i++){
+        cout<<"ID: ["<<retrivedData[i].getIdF()<<"]"<<endl;
         cout<<"Name: "<<retrivedData[i].fieldGetName()<<endl;
         cout<<"Description: "<<retrivedData[i].fieldDescription()<<endl;
         cout<<"Average points: "<<retrivedData[i].fieldGetPoints()<<endl;
@@ -86,7 +88,11 @@ void InputHandler::logic(UserInput* ui, Scientist* s, Field* f){
             case 1: {
                 string name = ui->getUserInput<string>("Name: ");
                 string surname = ui->getUserInput<string>("Surname: ");
-                s->addScientist(name, surname);
+                vector<Field> retrivedData = f->retriveFields();
+                ui->displayFields(retrivedData);
+                int idF = ui->getUserInput<int>("Enter ID of the field of scientist: ");
+                Field choosenField = s->addFieldScientist(retrivedData, idF);
+                s->addScientist(name, surname, choosenField);
                 break;
             }
             case 2: {

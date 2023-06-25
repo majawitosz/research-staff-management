@@ -27,15 +27,17 @@ class Scientist {
     Evaluation* evaluation;
     Field* field;
 public:
-    Scientist(string = "John", string ="Smith", int = 0);
+    Scientist(string = "John", string ="Smith", Field* f = nullptr, int = 0);
     string getNameScientist();
     string getSurnameScientist();
     int getId();
-    void addScientist(string name, string surname);
+    string getFieldName();
+    void addScientist(string name, string surname, Field f);
     vector<Scientist> retrieveScientists();
     void removeScientist(int id);
     void setEvaluationMethod(Evaluation* method);
     double calculatePeriodicScore(int i);
+    Field addFieldScientist(vector<Field> fields, int idF);
 };
 
 class Evaluation {

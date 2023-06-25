@@ -9,16 +9,17 @@
 
 int Scientist::usersCreated = -1;
 
-Scientist::Scientist(string n, string s, int i): name(n), surname(s), id(i){
+Scientist::Scientist(string n, string s,  Field* f, int i): name(n), surname(s), field(f), id(i){
     usersCreated ++;
     id = usersCreated;
 }
-void Scientist::addScientist(string name, string surname){
-    Scientist si(name, surname);
+
+void Scientist::addScientist(string name, string surname, Field f) {
+    Scientist si(name, surname, &f);
     scientists.push_back(si);
 }
 
-void Scientist::removeScientist(int id){
+void Scientist::removeScientist(int id) {
     vector<Scientist> removedScientists;
     for(int i = 0; i<scientists.size(); i++){
         if (id != scientists[i].id){
@@ -40,6 +41,20 @@ string Scientist::getSurnameScientist(){
 }
 int Scientist::getId(){
     return id;
+}
+
+string Scientist::getFieldName(){
+    
+    return field->fieldGetName();
+}
+
+Field Scientist::addFieldScientist(vector<Field> fields, int idF){
+    Field choosenField;
+    for(int i =0; i<fields.size(); i++){
+        if(fields[i].getIdF() == idF)
+            choosenField = fields[i];
+    }
+    return choosenField;
 }
 
 double BasicEvaluation::calculateRating(Scientist& scientist){
