@@ -24,18 +24,18 @@ class Scientist {
     static int usersCreated;
     int id;
     vector<Scientist> scientists;
-    Evaluation* evaluation;
+    
     Field* field;
 public:
     Scientist(string = "John", string ="Smith", int = 0);
     string getNameScientist();
     string getSurnameScientist();
     int getId();
-    void addScientist(string name, string surname);
-    vector<Scientist> retrieveScientists();
-    void removeScientist(int id);
-    void setEvaluationMethod(Evaluation* method);
-    double calculatePeriodicScore(int i);
+   // void addScientist(string name, string surname);
+   
+   
+   
+    
 };
 
 class Evaluation {

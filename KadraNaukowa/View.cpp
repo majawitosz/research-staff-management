@@ -48,7 +48,8 @@ void UserInput::displayFields(vector<Field> retrivedData){
         cout<<endl;
     }
 }
-
+// przenieść do pliku hpp
+//specjlizacje w cpp
 template <typename T> T UserInput::getUserInput(string prompt){
     cout << prompt;
     T input;
@@ -74,7 +75,7 @@ void InputHandler::errorHandling(int idInput, vector<Scientist> scientists){
    
 }
 
-void InputHandler::logic(UserInput* ui, Scientist* s, Field* f){
+void InputHandler::logic(UserInput* ui, Controller* c, Field* f){
     bool exitProgram = false;
     while (!exitProgram) {
         int input = ui->promptStart();
@@ -86,36 +87,35 @@ void InputHandler::logic(UserInput* ui, Scientist* s, Field* f){
             case 1: {
                 string name = ui->getUserInput<string>("Name: ");
                 string surname = ui->getUserInput<string>("Surname: ");
-                s->addScientist(name, surname);
+                c->addScientist(name, surname);
                 break;
             }
             case 2: {
-                vector<Scientist> retrivedData = s->retrieveScientists();
+                vector<Scientist> retrivedData = c->retrieveScientists();
                 ui->displayScientists(retrivedData);
                 break;
             }
             case 3: {
-                vector<Scientist> retrivedData = s->retrieveScientists();
+                vector<Scientist> retrivedData = c->retrieveScientists();
                 ui->displayScientists(retrivedData);
                 int IDinput = ui->getUserInput<int>("Enter ID of scientist you want to remove: ");
                 errorHandling(IDinput, retrivedData);
-                s->removeScientist(IDinput);
+                c->removeScientist(IDinput);
                 break;
             }
             case 4: {
-                int idEvaluation = ui->getUserInput<int>("Choose ID of scientist that you want to calculate rating for");
+                int idEvaluation = ui->getUserInput<int>("Choose ID of scientist that you want to calculate rating for: ");
                 Evaluation* basic = new BasicEvaluation();
-                s->setEvaluationMethod(basic);
-                double result = s->calculatePeriodicScore(idEvaluation);
-               // s->addScientistRate(result);
+                c->setEvaluationMethod(basic);
+                double result = c->calculatePeriodicScore(idEvaluation);
                 ui->displayEvaluationResult(result);
                 break;
             }
             case 5: {
-                int idEvaluation = ui->getUserInput<int>("Choose ID of scientist that you want to calculate rating for");
+                int idEvaluation = ui->getUserInput<int>("Choose ID of scientist that you want to calculate rating for: ");
                 Evaluation* advanced = new AdvancedEvaluation();
-                s->setEvaluationMethod(advanced);
-                double result = s->calculatePeriodicScore(idEvaluation);
+                c->setEvaluationMethod(advanced);
+                double result = c->calculatePeriodicScore(idEvaluation);
                 ui->displayEvaluationResult(result);
                 break;
             }

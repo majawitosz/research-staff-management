@@ -11,6 +11,7 @@
 		DC08E58C2A423675002777D1 /* Field.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DC08E58A2A423675002777D1 /* Field.cpp */; };
 		DC777BA82A3A03A900803ED2 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DC777BA72A3A03A900803ED2 /* main.cpp */; };
 		DC777BB62A3A078200803ED2 /* View.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DC777BB42A3A078200803ED2 /* View.cpp */; };
+		DC88D61A2A48E54E00F64D04 /* Controller.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DC88D6182A48E54E00F64D04 /* Controller.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -34,6 +35,8 @@
 		DC777BA72A3A03A900803ED2 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		DC777BB42A3A078200803ED2 /* View.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = View.cpp; path = KadraNaukowa/View.cpp; sourceTree = "<group>"; };
 		DC777BB52A3A078200803ED2 /* View.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = View.hpp; path = KadraNaukowa/View.hpp; sourceTree = "<group>"; };
+		DC88D6182A48E54E00F64D04 /* Controller.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = Controller.cpp; path = KadraNaukowa/Controller.cpp; sourceTree = "<group>"; };
+		DC88D6192A48E54E00F64D04 /* Controller.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = Controller.hpp; path = KadraNaukowa/Controller.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +53,8 @@
 		DC777B9B2A3A03A900803ED2 = {
 			isa = PBXGroup;
 			children = (
+				DC88D6182A48E54E00F64D04 /* Controller.cpp */,
+				DC88D6192A48E54E00F64D04 /* Controller.hpp */,
 				DC08E58A2A423675002777D1 /* Field.cpp */,
 				DC08E58B2A423675002777D1 /* Field.hpp */,
 				DC08E5842A3B9C01002777D1 /* Scientist.cpp */,
@@ -136,6 +141,7 @@
 			files = (
 				DC777BB62A3A078200803ED2 /* View.cpp in Sources */,
 				DC08E5862A3B9C01002777D1 /* Scientist.cpp in Sources */,
+				DC88D61A2A48E54E00F64D04 /* Controller.cpp in Sources */,
 				DC08E58C2A423675002777D1 /* Field.cpp in Sources */,
 				DC777BA82A3A03A900803ED2 /* main.cpp in Sources */,
 			);

@@ -8,6 +8,7 @@
 #ifndef View_hpp
 #define View_hpp
 #include "Scientist.hpp"
+#include "Controller.hpp"
 
 
 class UserInput {
@@ -22,11 +23,12 @@ public:
 
 class InputHandler {
     UserInput* userInput;
-    Scientist* scientist;
+    //Scientist* scientist;
+    Controller* controller;
     Field* field;
 public:
     char keyboardInput();
-    void logic(UserInput* ui, Scientist* s, Field* f);
+    void logic(UserInput* ui, Controller* c, Field* f);
     void errorHandling(int idInput, vector<Scientist> scientists);
 };
 
