@@ -2,7 +2,7 @@
   "_buildCommand2" : {
     "command" : "build",
     "skipDependencies" : false,
-    "style" : "buildAndRun"
+    "style" : "buildOnly"
   },
   "buildCommand" : "build",
   "configuredTargets" : [
@@ -37,7 +37,7 @@
       "indexPCHPath" : "/Users/majawitosz/Library/Developer/Xcode/DerivedData/KadraNaukowa-bhsokelpipgaqnbjtvrlmnuwfezy/Index.noindex/PrecompiledHeaders",
       "pchPath" : "/Users/majawitosz/Documents/Studia/wszystkoProjekt/research-staff-management/Build/Intermediates.noindex/PrecompiledHeaders"
     },
-    "configurationName" : "Debug",
+    "configurationName" : "Release",
     "overrides" : {
       "synthesized" : {
         "table" : {
@@ -47,7 +47,7 @@
     }
   },
   "schemeCommand" : "launch",
-  "schemeCommand2" : "launch",
+  "schemeCommand2" : "profile",
   "showNonLoggedProgress" : true,
   "useDryRun" : false,
   "useImplicitDependencies" : true,
