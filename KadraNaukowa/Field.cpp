@@ -7,17 +7,14 @@
 
 #include "Field.hpp"
 
+int Field::fieldsCreated = 0;
 
-Field::Field(string n, string d, int a): name(n), description(d), avgPoints(a){}
 
-void Field::addField(string n, string d, int a){
-    Field fi(n ,d, a);
-    fields.push_back(fi);
+Field::Field(string n, string d, int a, int i): name(n), description(d), avgPoints(a), idF(i){
+    fieldsCreated ++;
+    idF = fieldsCreated;
 }
 
-vector<Field> Field::retriveFields(){
-    return fields;
-}
 string Field::fieldGetName(){
     return name;
 }
@@ -27,3 +24,7 @@ string Field::fieldDescription(){
 int Field::fieldGetPoints(){
     return avgPoints;
 }
+int Field::getIdF(){
+    return idF;
+}
+

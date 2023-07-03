@@ -7,17 +7,12 @@
 
 #include "Scientist.hpp"
 
-int Scientist::usersCreated = -1;
+int Scientist::usersCreated = 0;
 
-Scientist::Scientist(string n, string s, int i): name(n), surname(s), id(i){
+Scientist::Scientist(string n, string s, Field* f, int i): name(n), surname(s), field(f), id(i){
     usersCreated ++;
     id = usersCreated;
 }
-//void Scientist::addScientist(string name, string surname){
-//    Scientist si(name, surname);
-//    scientists.push_back(si);
-//}
-
 
 string Scientist::getNameScientist(){
     return name;
@@ -27,6 +22,9 @@ string Scientist::getSurnameScientist(){
 }
 int Scientist::getId(){
     return id;
+}
+string Scientist::getFieldName(){
+    return field->fieldGetName();
 }
 
 double BasicEvaluation::calculateRating(Scientist& scientist){

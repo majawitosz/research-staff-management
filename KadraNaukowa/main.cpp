@@ -13,10 +13,8 @@
 
 int main(int argc, const char * argv[]) {
     UserInput u1;
-    //Scientist s1;
     Controller c1;
-    Field f1;
     InputHandler i1;
-    i1.logic(&u1, &c1, &f1);
+    i1.handleInput(&u1, &c1);
     return 0;
 }
